@@ -5,3 +5,6 @@ num3
 
 avgNum = num3/2
 avgNum
+
+mulNum = num1 * num2
+mulNum
