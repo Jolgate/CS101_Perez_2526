@@ -1,0 +1,101 @@
+---
+title: "RExercise#2_Perez"
+author: "Joewel Perez"
+date: "2026-09-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Part A - Arithmetic Operations
+
+#TODO: Store 17 in a variable called a, and 5 in a variable called b
+#Then print the results of: a + b, a - b, a * b, a / b
+
+```{r}
+a <-17
+b <-5
+a+b
+a-b
+a*b
+a/b
+```
+
+#TODO: Using the same a and b, compute and print a %% b and a %/% b
+#a %% b = remainder of a / b
+#a %/% b = whole-number (integer) division
+
+```{r}
+a%%b
+a%/%b
+```
+
+#TODO: Print 2 raised to the power of 10 using the ^ operator
+
+```{r}
+2^10
+```
+
+#Question 1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your own words, explain how these three results relate to each other mathematically.
+
+```{r}
+a/b
+a%%b
+a%/%b
+```
+# a/b divides and shows the division with decimal, a%%b divides and shows the remainder, a%/%b divides and shows the division
+
+#Question #2: Predict the output of 10 %% 3 and 10 %/% 3 before running the code. Were you correct? If not, explain what you misunderstood.
+
+# 10 %% 3 outputs the remainder, which means it shows 1, 10 %/% 3 outputs the division, which means it shows 3
+```{r}
+10%%3
+10%/%3
+```
+
+# Part B - Basic Data Types
+
+#TODO: Use typeof() to check the type of each of x, y, z, w, v
+
+```{r}
+x <- 42
+y <- 42L        # the L suffix forces an integer
+z <- "42"
+w <- TRUE
+v <- 3 + 2i     # complex number
+
+typeof(x)
+typeof(y)
+typeof(z)
+typeof(w)
+typeof(v)
+```
+
+#TODO: Use class() to check the class of each of x, y, z, w, v
+
+```{r}
+class(x)
+class(y)
+class(z)
+class(w)
+class(v)
+```
+
+#TODO: Use mode() to check the class of each of x, y, z, w, v
+
+```{r}
+mode(x)
+mode(y)
+mode(z)
+mode(w)
+mode(v)
+```
+
+#Question #3): x <- 42 and y <- 42L look almost identical, but typeof(x) and typeof(y) give different answers. Explain the difference in your own words.
+
+# I guess it output as integer because it is a form of measurement, which is liter
+
+#Question #4: Is typeof() ever different from class() and from mode() for the same object? Look at your results above and explain any case where this happens (or, if you did not see one, explain what you would expect for a matrix or factor).
+
