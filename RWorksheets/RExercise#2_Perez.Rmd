@@ -99,3 +99,142 @@ mode(v)
 
 #Question #4: Is typeof() ever different from class() and from mode() for the same object? Look at your results above and explain any case where this happens (or, if you did not see one, explain what you would expect for a matrix or factor).
 
+# Yes, I think its because typeof is built to be an in depth view of a data type, whereas class and mode to be shallower and shallowest.
+
+#Part C - Type Conversion
+
+# TODO: Convert num_string to a numeric value using as.numeric()
+# Then check its type with typeof(), class(), and mode()
+
+```{r}
+num_string <- "123"
+num_as.num <-as.numeric(num_string)
+typeof(num_as.num)
+class(num_as.num)
+mode(num_as.num)
+```
+
+# TODO: Convert the number 0 and the number 1 to logical using as.logical()
+# What do you get?
+
+```{r}
+as.logical(0)
+as.logical(1)
+```
+
+# TODO: Try converting bad_string to numeric using as.numeric()
+# Run this chunk and observe the warning message and the result
+
+```{r}
+bad_string <- "hello123"
+as.numeric(bad_string)
+```
+
+# The code resulted an error because the string contains characters, as as.numeric only convert numbers
+
+#Question #5: When you ran the conversion-fail chunk, R produced NA and a warning instead of stopping with an error.
+
+#Why do you think R is designed to give a warning here rather than crashing the whole script?
+
+# It is not strict with the errors because R was not built to make systems, but to analyze data.
+
+#What are the risks of this behavior if you don’t read your warnings?
+
+# You will have missed some observations to your data, which will result to some unwise decisions
+
+#Question #6: as.logical(0) and as.logical(1) convert to FALSE and TRUE.
+
+#What do you think as.logical(2) and as.logical(-1)` will produce?
+
+# Nothing because logic values are only true and false.
+
+#Test it, then explain the rule R seems to be following.
+
+```{r}
+as.logical(2)
+as.logical(-1)
+```
+# I think it runs on if else logic, if the number is 0, then it will type FALSE, anything else, type TRUE.
+
+# Part D — Strings, paste(), and paste0()
+
+```{r}
+first_name <- "Juan"
+last_name <- "Dela Cruz"
+```
+
+# TODO: Print first_name and last_name using print() and/or cat()
+
+```{r}
+print(first_name)
+print(last_name)
+cat(first_name, last_name)
+```
+
+# TODO: Use paste() to combine first_name and last_name into a full name
+# TODO: Use paste0() to do the same, and compare the two results
+
+```{r}
+paste(first_name, last_name)
+paste0(first_name, last_name)
+```
+
+# TODO: Use paste() with the argument sep = "-" to join first_name and
+# last_name with a dash instead of a space
+
+```{r}
+paste(first_name, last_name, sep = "-")
+```
+
+```{r}
+age <- 21
+```
+
+# TODO: Use paste0() to build the sentence:
+# "Juan Dela Cruz is 21 years old." by combining full_name, age, and text
+
+```{r}
+paste0(first_name, " ", last_name, " is ", age, " years old")
+```
+
+#Question #7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
+
+# paste() has a separator as space by default while paste0() does not have one by default. 
+
+#Question #8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
+
+#Did this cause an error? Explain what paste0() does internally to make this work, and how it relates to the type conversions you practiced in Part C.
+
+# No, every variable has a data type as a metadata made by type converter by default, the paste0() grabs that metadata to expect what to print in the display.
+
+#TODO: Predict, then test: what is the result of "5" + 5 in R?
+#Run it and read the error message carefully.
+
+# It will not add up because one is a string and the other is numerical
+
+```{r}
+5#+"5"
+```
+#non-numeric argument to binary operator
+
+#TODO: Now fix the code above so that "5" + 5 correctly evaluates to 10
+#using an appropriate conversion function.
+
+```{r}
+as.numeric("5") +5
+```
+
+#Question #9: Some programming languages automatically convert "5" + 5 into 10 without an error. R does not.
+
+#Based on what you’ve learned about R’s data types in this lab, why do you think R requires an explicit conversion instead of guessing what the programmer meant?
+
+# To separate data meant to be shown and meant to be calculated.
+
+#Question #10: Suppose a classmate writes a script that reads a column of “numbers” from a text file. The column looks numeric, but when they try sum() on it, R throws an error. Based on everything in this lab (types, typeof()/class()/mode(), conversion, warnings), write a short paragraph explaining what likely went wrong and the steps you’d take to diagnose and fix it.
+
+# The "numbers" probably is on a different data types. We need to check their data types by using typeof() for a more in depth observation, class() and mode() for a simpler one. Then convert the "numbers" whom are not numeric by using as.numeric().
+
+# Conclusion
+#In 3–4 sentences, summarize what you learned about how R handles different data types, and why understanding typeof()/class() and conversion functions matters before doing arithmetic or combining data.
+
+# R handles data types similar the way typeof(), class(), mode() checks a data type. The conversion matters because if you do not assign a role, they will likely to work on their own and screw up the environment in an office. By assigning them a proper data type, they will know whether they are meant for math, or for presentation.
