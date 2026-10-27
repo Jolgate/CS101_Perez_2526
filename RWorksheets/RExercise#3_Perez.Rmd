@@ -338,27 +338,29 @@ inventory$item[inventory$in_stock == TRUE]
 #(You will need three separate append() calls, one per vector.)
 
 ```{r}
-append(inventory$item, "Ruler")
-append(inventory$price, 15)
-append(inventory$in_stock, TRUE)
+inventory$item <-append(inventory$item, "Ruler")
+inventory$price <-append(inventory$price, 15)
+inventory$in_stock <-append(inventory$in_stock, TRUE)
 ```
 
 #Question #12:
 
 #In challenge-1, you combined logical indexing on one vector (in_stock) to filter a different vector (item) inside the same list. Explain, step by step, why inventory$item[inventory$in_stock] works even though item and in_stock are stored as separate elements of the list.
 
-# Firstly, R evaluates the $ operator in the "inventory" list to extract the components from inventory list with the mentioned variable. Then the list accesses that column which is has layout of a vector, then the elements can be accessed using an array, therefore, when "inventory$item[inventory$in_stock]" it calls the column item, which is [1] on the array, then it calls inventory$in_stock, which is [3] on the array (of the list), which comes 
+```{r}
+inventory$item[inventory$in_stock]
+```
+
+# Firstly, R evaluates the $ operator in the "inventory" list to extract the components from inventory list with the mentioned variable. Then the list accesses that column which is has layout of a vector, and inventory$in_stock has boolean values, which the system automatically filters all TRUE values from FALSE values in comparison to inventory$item.
 
 #Question #13:
 
 #Suppose a classmate stores related data as three separate, unconnected vectors (item_names, item_prices, item_stock) instead of grouping them into one list like inventory. What risks or bugs could this create as the dataset grows or gets reordered? Argue for or against using a list (or, later, a data frame) instead of separate vectors.
 
-```{r}
+# We use a list because R has built in features that can help filter or analyze data. If R cannot find relevance in two data (e.g. Two separate vectors) you will need to input a code that has a longer syntax, in which will delay your data reading.
 
-```
+#Conclusion
+#In 3–4 sentences, summarize the key differences between vectors and lists in R, and explain when you would choose one data structure over the other.
 
-Conclusion
-In 3–4 sentences, summarize the key differences between vectors and lists in R, and explain when you would choose one data structure over the other.
-
-(Your answer here)
+# Vectors are just an arrangement of data, while lists are a tabular arrangement of data that has automatic features for sorting it. You would prefer to use vectors when the data is small enough and if there is no connection to other data. And you would prefer to use lists when you handle data that has correlation with each other that it can be shown in a tabular form.
 

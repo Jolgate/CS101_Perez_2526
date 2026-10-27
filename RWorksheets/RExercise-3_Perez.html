@@ -653,37 +653,47 @@ needs #to be added to inventory. Use append() to add “Ruler” to
 #inventory<span class="math inline">\(item, 15.00 to
 inventory\)</span>price, and TRUE to inventory$in_stock. #(You will need
 three separate append() calls, one per vector.)</p>
-<pre class="r"><code>append(inventory$item, &quot;Ruler&quot;)</code></pre>
-<pre><code>## [1] &quot;Notebook&quot; &quot;Pen&quot;      &quot;Eraser&quot;   &quot;Ruler&quot;</code></pre>
-<pre class="r"><code>append(inventory$price, 15)</code></pre>
-<pre><code>## [1] 25.5 10.0  5.0 15.0</code></pre>
-<pre class="r"><code>append(inventory$in_stock, TRUE)</code></pre>
-<pre><code>## [1]  TRUE  TRUE FALSE  TRUE</code></pre>
+<pre class="r"><code>inventory$item &lt;-append(inventory$item, &quot;Ruler&quot;)
+inventory$price &lt;-append(inventory$price, 15)
+inventory$in_stock &lt;-append(inventory$in_stock, TRUE)</code></pre>
 <p>#Question #12:</p>
 <p>#In challenge-1, you combined logical indexing on one vector
 (in_stock) to filter a different vector (item) inside the same list.
 Explain, step by step, why inventory<span class="math inline">\(item[inventory\)</span>in_stock] works even though
 item and in_stock are stored as separate elements of the list.</p>
+<pre class="r"><code>inventory$item[inventory$in_stock]</code></pre>
+<pre><code>## [1] &quot;Notebook&quot; &quot;Pen&quot;      &quot;Ruler&quot;</code></pre>
 </div>
-<div id="firstly-r-evaluates-the-operator-in-the-inventory-list-to-extract-the-components-from-inventory-list-with-the-mentioned-variable.-then-the-list-accesses-that-column-which-is-has-layout-of-a-vector-then-the-elements-can-be-accessed-using-an-array-therefore-when-inventoryiteminventoryin_stock-it-calls-the-column-item-which-is-1-on-the-array-then-it-calls-inventoryin_stock-which-is-3-on-the-array-of-the-list-which-comes" class="section level1">
+<div id="firstly-r-evaluates-the-operator-in-the-inventory-list-to-extract-the-components-from-inventory-list-with-the-mentioned-variable.-then-the-list-accesses-that-column-which-is-has-layout-of-a-vector-and-inventoryin_stock-has-boolean-values-which-the-system-automatically-filters-all-true-values-from-false-values-in-comparison-to-inventoryitem." class="section level1">
 <h1>Firstly, R evaluates the $ operator in the “inventory” list to
 extract the components from inventory list with the mentioned variable.
-Then the list accesses that column which is has layout of a vector, then
-the elements can be accessed using an array, therefore, when
-“inventory<span class="math inline">\(item[inventory\)</span>in_stock]”
-it calls the column item, which is [1] on the array, then it calls
-inventory$in_stock, which is [3] on the array (of the list), which
-comes</h1>
+Then the list accesses that column which is has layout of a vector, and
+inventory<span class="math inline">\(in_stock has boolean values, which
+the system automatically filters all TRUE values from FALSE values in
+comparison to inventory\)</span>item.</h1>
 <p>#Question #13:</p>
 <p>#Suppose a classmate stores related data as three separate,
 unconnected vectors (item_names, item_prices, item_stock) instead of
 grouping them into one list like inventory. What risks or bugs could
 this create as the dataset grows or gets reordered? Argue for or against
 using a list (or, later, a data frame) instead of separate vectors.</p>
-<p>Conclusion In 3–4 sentences, summarize the key differences between
+</div>
+<div id="we-use-a-list-because-r-has-built-in-features-that-can-help-filter-or-analyze-data.-if-r-cannot-find-relevance-in-two-data-e.g.-two-separate-vectors-you-will-need-to-input-a-code-that-has-a-longer-syntax-in-which-will-delay-your-data-reading." class="section level1">
+<h1>We use a list because R has built in features that can help filter
+or analyze data. If R cannot find relevance in two data (e.g. Two
+separate vectors) you will need to input a code that has a longer
+syntax, in which will delay your data reading.</h1>
+<p>#Conclusion #In 3–4 sentences, summarize the key differences between
 vectors and lists in R, and explain when you would choose one data
 structure over the other.</p>
-<p>(Your answer here)</p>
+</div>
+<div id="vectors-are-just-an-arrangement-of-data-while-lists-are-a-tabular-arrangement-of-data-that-has-automatic-features-for-sorting-it.-you-would-prefer-to-use-vectors-when-the-data-is-small-enough-and-if-there-is-no-connection-to-other-data.-and-you-would-prefer-to-use-lists-when-you-handle-data-that-has-correlation-with-each-other-that-it-can-be-shown-in-a-tabular-form." class="section level1">
+<h1>Vectors are just an arrangement of data, while lists are a tabular
+arrangement of data that has automatic features for sorting it. You
+would prefer to use vectors when the data is small enough and if there
+is no connection to other data. And you would prefer to use lists when
+you handle data that has correlation with each other that it can be
+shown in a tabular form.</h1>
 </div>
 
 
