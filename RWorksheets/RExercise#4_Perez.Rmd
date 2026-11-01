@@ -93,24 +93,31 @@ result
 #Create vectors according to the above table.
 
 ```{r}
-Power_Ranking <-(seq(25))
-Power_Ranking
-Celebrity_Name <-c("Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger wWoods", "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos","Dan Brown","Bruce Springsteen","Donald Trump","Muhammad Ali","Paul McCartney","George Lucas","Elton John","David Letterman","Phil Mickelson","J.K. Rowling","Bradd Pitt","Peter Jackson","Dr. Phil McGraw","Jay Lenon","Celine Dion","Kobe Bryant")
-Pay <-c(67,9,225,11,9,332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31)
+Power_Ranking <- seq(1, 25)
+
+Celebrity_Name <- c(
+  "Tom Cruise", "Rolling Stones", "Oprah Winfrey", "U2", "Tiger Woods", 
+  "Steven Spielberg", "Howard Stern", "50 Cent", "Cast of the Sopranos", "Dan Brown", 
+  "Bruce Springsteen", "Donald Trump", "Muhammad Ali", "Paul McCartney", "George Lucas", 
+  "Elton John", "David Letterman", "Phil Mickelson", "J.K. Rowling", "Brad Pitt", 
+  "Peter Jackson", "Dr. Phil McGraw", "Jay Leno", "Celine Dion", "Kobe Bryant"
+)
+
+Pay <- c(67, 9, 225, 11, 9, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)
+
 ```
 
 #Modify the power ranking and pay of J.K. Rowling. Change power ranking to 15 and pay to 90.
 
 ```{r}
-celebs <-data.frame(Power_Ranking  =Power_Ranking, Celebrity_Name =Celebrity_Name, Pay =Pay)
-celebs[celebs$Celebrity_Name == "J.K. Rowling", "Power_Ranking"] <- 15
-celebs[celebs$Celebrity_Name == "J.K. Rowling", "Pay"] <- 90
-#for(i in 25){
-#  if (celebs$Celebrity_Name[i] != "J.K. Rowling" && celebs$Power_Ranking[i] == 15) {
-#    celebs$Power_Ranking[i]+1
-#  }
-#}
-#celebs$Power_Ranking[] <-celebs$Power_Ranking[order(celebs$Power_Ranking)]
+celebs <- data.frame(Power_Ranking, Celebrity_Name, Pay, stringsAsFactors = FALSE)
+celebs$Pay[celebs$Celebrity_Name == "J.K. Rowling"] <- 90
+celebs$Power_Ranking[celebs$Power_Ranking >= 15 & celebs$Power_Ranking < 19] <- 
+  celebs$Power_Ranking[celebs$Power_Ranking >= 15 & celebs$Power_Ranking < 19] + 1
+celebs$Power_Ranking[celebs$Celebrity_Name == "J.K. Rowling"] <- 15
+
+celebs <- celebs[order(celebs$Power_Ranking), ]
+rownames(celebs) <- NULL
 celebs
 ```
 

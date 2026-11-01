@@ -429,29 +429,34 @@ result</code></pre>
 annual pay as ranked by the editions of Forbes magazine and as listed on
 the Forbes.com website. #Forbes Ranking Table #Forbes Ranking #Create
 vectors according to the above table.</p>
-<pre class="r"><code>Power_Ranking &lt;-(seq(25))
-Power_Ranking</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25</code></pre>
-<pre class="r"><code>Celebrity_Name &lt;-c(&quot;Tom Cruise&quot;, &quot;Rolling Stones&quot;, &quot;Oprah Winfrey&quot;, &quot;U2&quot;, &quot;Tiger wWoods&quot;, &quot;Steven Spielberg&quot;, &quot;Howard Stern&quot;, &quot;50 Cent&quot;, &quot;Cast of the Sopranos&quot;,&quot;Dan Brown&quot;,&quot;Bruce Springsteen&quot;,&quot;Donald Trump&quot;,&quot;Muhammad Ali&quot;,&quot;Paul McCartney&quot;,&quot;George Lucas&quot;,&quot;Elton John&quot;,&quot;David Letterman&quot;,&quot;Phil Mickelson&quot;,&quot;J.K. Rowling&quot;,&quot;Bradd Pitt&quot;,&quot;Peter Jackson&quot;,&quot;Dr. Phil McGraw&quot;,&quot;Jay Lenon&quot;,&quot;Celine Dion&quot;,&quot;Kobe Bryant&quot;)
-Pay &lt;-c(67,9,225,11,9,332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31)</code></pre>
+<pre class="r"><code>Power_Ranking &lt;- seq(1, 25)
+
+Celebrity_Name &lt;- c(
+  &quot;Tom Cruise&quot;, &quot;Rolling Stones&quot;, &quot;Oprah Winfrey&quot;, &quot;U2&quot;, &quot;Tiger Woods&quot;, 
+  &quot;Steven Spielberg&quot;, &quot;Howard Stern&quot;, &quot;50 Cent&quot;, &quot;Cast of the Sopranos&quot;, &quot;Dan Brown&quot;, 
+  &quot;Bruce Springsteen&quot;, &quot;Donald Trump&quot;, &quot;Muhammad Ali&quot;, &quot;Paul McCartney&quot;, &quot;George Lucas&quot;, 
+  &quot;Elton John&quot;, &quot;David Letterman&quot;, &quot;Phil Mickelson&quot;, &quot;J.K. Rowling&quot;, &quot;Brad Pitt&quot;, 
+  &quot;Peter Jackson&quot;, &quot;Dr. Phil McGraw&quot;, &quot;Jay Leno&quot;, &quot;Celine Dion&quot;, &quot;Kobe Bryant&quot;
+)
+
+Pay &lt;- c(67, 9, 225, 11, 9, 332, 302, 41, 52, 88, 55, 44, 55, 40, 233, 34, 40, 47, 75, 25, 39, 45, 32, 40, 31)</code></pre>
 <p>#Modify the power ranking and pay of J.K. Rowling. Change power
 ranking to 15 and pay to 90.</p>
-<pre class="r"><code>celebs &lt;-data.frame(Power_Ranking  =Power_Ranking, Celebrity_Name =Celebrity_Name, Pay =Pay)
-celebs[celebs$Celebrity_Name == &quot;J.K. Rowling&quot;, &quot;Power_Ranking&quot;] &lt;- 15
-celebs[celebs$Celebrity_Name == &quot;J.K. Rowling&quot;, &quot;Pay&quot;] &lt;- 90
-#for(i in 25){
-#  if (celebs$Celebrity_Name[i] != &quot;J.K. Rowling&quot; &amp;&amp; celebs$Power_Ranking[i] == 15) {
-#    celebs$Power_Ranking[i]+1
-#  }
-#}
-#celebs$Power_Ranking[] &lt;-celebs$Power_Ranking[order(celebs$Power_Ranking)]
+<pre class="r"><code>celebs &lt;- data.frame(Power_Ranking, Celebrity_Name, Pay, stringsAsFactors = FALSE)
+celebs$Pay[celebs$Celebrity_Name == &quot;J.K. Rowling&quot;] &lt;- 90
+celebs$Power_Ranking[celebs$Power_Ranking &gt;= 15 &amp; celebs$Power_Ranking &lt; 19] &lt;- 
+  celebs$Power_Ranking[celebs$Power_Ranking &gt;= 15 &amp; celebs$Power_Ranking &lt; 19] + 1
+celebs$Power_Ranking[celebs$Celebrity_Name == &quot;J.K. Rowling&quot;] &lt;- 15
+
+celebs &lt;- celebs[order(celebs$Power_Ranking), ]
+rownames(celebs) &lt;- NULL
 celebs</code></pre>
 <pre><code>##    Power_Ranking       Celebrity_Name Pay
 ## 1              1           Tom Cruise  67
 ## 2              2       Rolling Stones   9
 ## 3              3        Oprah Winfrey 225
 ## 4              4                   U2  11
-## 5              5         Tiger wWoods   9
+## 5              5          Tiger Woods   9
 ## 6              6     Steven Spielberg 332
 ## 7              7         Howard Stern 302
 ## 8              8              50 Cent  41
@@ -461,15 +466,15 @@ celebs</code></pre>
 ## 12            12         Donald Trump  44
 ## 13            13         Muhammad Ali  55
 ## 14            14       Paul McCartney  40
-## 15            15         George Lucas 233
-## 16            16           Elton John  34
-## 17            17      David Letterman  40
-## 18            18       Phil Mickelson  47
-## 19            15         J.K. Rowling  90
-## 20            20           Bradd Pitt  25
+## 15            15         J.K. Rowling  90
+## 16            16         George Lucas 233
+## 17            17           Elton John  34
+## 18            18      David Letterman  40
+## 19            19       Phil Mickelson  47
+## 20            20            Brad Pitt  25
 ## 21            21        Peter Jackson  39
 ## 22            22      Dr. Phil McGraw  45
-## 23            23            Jay Lenon  32
+## 23            23             Jay Leno  32
 ## 24            24          Celine Dion  40
 ## 25            25          Kobe Bryant  31</code></pre>
 <p>#Question #4:</p>
