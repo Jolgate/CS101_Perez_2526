@@ -1,5 +1,5 @@
 ---
-title: "RExercise#2_Perez"
+title: "RExercise 2_Perez"
 author: "Joewel Perez"
 date: "2026-09-30"
 output: html_document
@@ -11,8 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Part A - Arithmetic Operations
 
-#TODO: Store 17 in a variable called a, and 5 in a variable called b
-#Then print the results of: a + b, a - b, a * b, a / b
+TODO: Store 17 in a variable called a, and 5 in a variable called b
+Then print the results of: a + b, a - b, a * b, a / b
 
 ```{r}
 a <-17
@@ -23,33 +23,33 @@ a*b
 a/b
 ```
 
-#TODO: Using the same a and b, compute and print a %% b and a %/% b
-#a %% b = remainder of a / b
-#a %/% b = whole-number (integer) division
+TODO: Using the same a and b, compute and print a %% b and a %/% b
+a %% b = remainder of a / b
+a %/% b = whole-number (integer) division
 
 ```{r}
 a%%b
 a%/%b
 ```
 
-#TODO: Print 2 raised to the power of 10 using the ^ operator
+TODO: Print 2 raised to the power of 10 using the ^ operator
 
 ```{r}
 2^10
 ```
 
-#Question 1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your own words, explain how these three results relate to each other mathematically.
+Question 1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your own words, explain how these three results relate to each other mathematically.
 
 ```{r}
 a/b
 a%%b
 a%/%b
 ```
-# a/b divides and shows the division with decimal, a%%b divides and shows the remainder, a%/%b divides and shows the division
+a/b divides and shows the division with decimal, a%%b divides and shows the remainder, a%/%b divides and shows the division
 
-#Question #2: Predict the output of 10 %% 3 and 10 %/% 3 before running the code. Were you correct? If not, explain what you misunderstood.
+Question #2: Predict the output of 10 %% 3 and 10 %/% 3 before running the code. Were you correct? If not, explain what you misunderstood.
 
-# 10 %% 3 outputs the remainder, which means it shows 1, 10 %/% 3 outputs the division, which means it shows 3
+10 %% 3 outputs the remainder, which means it shows 1, 10 %/% 3 outputs the division, which means it shows 3
 ```{r}
 10%%3
 10%/%3
@@ -57,11 +57,11 @@ a%/%b
 
 # Part B - Basic Data Types
 
-#TODO: Use typeof() to check the type of each of x, y, z, w, v
+TODO: Use typeof() to check the type of each of x, y, z, w, v
 
 ```{r}
 x <- 42
-y <- 42L        # the L suffix forces an integer
+y <- 42L        #  the L suffix forces an integer
 z <- "42"
 w <- TRUE
 v <- 3 + 2i     # complex number
@@ -73,7 +73,7 @@ typeof(w)
 typeof(v)
 ```
 
-#TODO: Use class() to check the class of each of x, y, z, w, v
+TODO: Use class() to check the class of each of x, y, z, w, v
 
 ```{r}
 class(x)
@@ -83,7 +83,7 @@ class(w)
 class(v)
 ```
 
-#TODO: Use mode() to check the class of each of x, y, z, w, v
+TODO: Use mode() to check the class of each of x, y, z, w, v
 
 ```{r}
 mode(x)
@@ -93,18 +93,18 @@ mode(w)
 mode(v)
 ```
 
-#Question #3): x <- 42 and y <- 42L look almost identical, but typeof(x) and typeof(y) give different answers. Explain the difference in your own words.
+Question #3): x <- 42 and y <- 42L look almost identical, but typeof(x) and typeof(y) give different answers. Explain the difference in your own words.
 
 # I guess it output as integer because it is a form of measurement, which is liter
 
-#Question #4: Is typeof() ever different from class() and from mode() for the same object? Look at your results above and explain any case where this happens (or, if you did not see one, explain what you would expect for a matrix or factor).
+Question #4: Is typeof() ever different from class() and from mode() for the same object? Look at your results above and explain any case where this happens (or, if you did not see one, explain what you would expect for a matrix or factor).
 
 # Yes, I think its because typeof is built to be an in depth view of a data type, whereas class and mode to be shallower and shallowest.
 
-#Part C - Type Conversion
+# Part C - Type Conversion
 
-# TODO: Convert num_string to a numeric value using as.numeric()
-# Then check its type with typeof(), class(), and mode()
+TODO: Convert num_string to a numeric value using as.numeric()
+Then check its type with typeof(), class(), and mode()
 
 ```{r}
 num_string <- "123"
@@ -114,16 +114,16 @@ class(num_as.num)
 mode(num_as.num)
 ```
 
-# TODO: Convert the number 0 and the number 1 to logical using as.logical()
-# What do you get?
+TODO: Convert the number 0 and the number 1 to logical using as.logical()
+What do you get?
 
 ```{r}
 as.logical(0)
 as.logical(1)
 ```
 
-# TODO: Try converting bad_string to numeric using as.numeric()
-# Run this chunk and observe the warning message and the result
+TODO: Try converting bad_string to numeric using as.numeric()
+Run this chunk and observe the warning message and the result
 
 ```{r}
 bad_string <- "hello123"
@@ -132,23 +132,23 @@ as.numeric(bad_string)
 
 # The code resulted an error because the string contains characters, as as.numeric only convert numbers
 
-#Question #5: When you ran the conversion-fail chunk, R produced NA and a warning instead of stopping with an error.
+Question #5: When you ran the conversion-fail chunk, R produced NA and a warning instead of stopping with an error.
 
-#Why do you think R is designed to give a warning here rather than crashing the whole script?
+Why do you think R is designed to give a warning here rather than crashing the whole script?
 
 # It is not strict with the errors because R was not built to make systems, but to analyze data.
 
-#What are the risks of this behavior if you don’t read your warnings?
+What are the risks of this behavior if you don’t read your warnings?
 
 # You will have missed some observations to your data, which will result to some unwise decisions
 
-#Question #6: as.logical(0) and as.logical(1) convert to FALSE and TRUE.
+Question #6: as.logical(0) and as.logical(1) convert to FALSE and TRUE.
 
-#What do you think as.logical(2) and as.logical(-1)` will produce?
+What do you think as.logical(2) and as.logical(-1)` will produce?
 
 # Nothing because logic values are only true and false.
 
-#Test it, then explain the rule R seems to be following.
+Test it, then explain the rule R seems to be following.
 
 ```{r}
 as.logical(2)
@@ -163,7 +163,7 @@ first_name <- "Juan"
 last_name <- "Dela Cruz"
 ```
 
-# TODO: Print first_name and last_name using print() and/or cat()
+TODO: Print first_name and last_name using print() and/or cat()
 
 ```{r}
 print(first_name)
@@ -171,16 +171,16 @@ print(last_name)
 cat(first_name, last_name)
 ```
 
-# TODO: Use paste() to combine first_name and last_name into a full name
-# TODO: Use paste0() to do the same, and compare the two results
+TODO: Use paste() to combine first_name and last_name into a full name
+TODO: Use paste0() to do the same, and compare the two results
 
 ```{r}
 paste(first_name, last_name)
 paste0(first_name, last_name)
 ```
 
-# TODO: Use paste() with the argument sep = "-" to join first_name and
-# last_name with a dash instead of a space
+TODO: Use paste() with the argument sep = "-" to join first_name and
+last_name with a dash instead of a space
 
 ```{r}
 paste(first_name, last_name, sep = "-")
@@ -190,51 +190,51 @@ paste(first_name, last_name, sep = "-")
 age <- 21
 ```
 
-# TODO: Use paste0() to build the sentence:
-# "Juan Dela Cruz is 21 years old." by combining full_name, age, and text
+TODO: Use paste0() to build the sentence:
+"Juan Dela Cruz is 21 years old." by combining full_name, age, and text
 
 ```{r}
 paste0(first_name, " ", last_name, " is ", age, " years old")
 ```
 
-#Question #7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
+Question #7: paste() and paste0() produced different results for the same two strings. Explain exactly why, referencing what each function does by default.
 
 # paste() has a separator as space by default while paste0() does not have one by default. 
 
-#Question #8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
+Question #8: In the strings-numbers chunk, you combined a character string with a numeric variable (age) using paste0() without first converting age to a string.
 
-#Did this cause an error? Explain what paste0() does internally to make this work, and how it relates to the type conversions you practiced in Part C.
+Did this cause an error? Explain what paste0() does internally to make this work, and how it relates to the type conversions you practiced in Part C.
 
 # No, every variable has a data type as a metadata made by type converter by default, the paste0() grabs that metadata to expect what to print in the display.
 
-#TODO: Predict, then test: what is the result of "5" + 5 in R?
-#Run it and read the error message carefully.
+TODO: Predict, then test: what is the result of "5" + 5 in R?
+Run it and read the error message carefully.
 
 # It will not add up because one is a string and the other is numerical
 
 ```{r}
 5#+"5"
 ```
-#non-numeric argument to binary operator
+non-numeric argument to binary operator
 
-#TODO: Now fix the code above so that "5" + 5 correctly evaluates to 10
-#using an appropriate conversion function.
+TODO: Now fix the code above so that "5" + 5 correctly evaluates to 10
+using an appropriate conversion function.
 
 ```{r}
 as.numeric("5") +5
 ```
 
-#Question #9: Some programming languages automatically convert "5" + 5 into 10 without an error. R does not.
+Question #9: Some programming languages automatically convert "5" + 5 into 10 without an error. R does not.
 
-#Based on what you’ve learned about R’s data types in this lab, why do you think R requires an explicit conversion instead of guessing what the programmer meant?
+Based on what you’ve learned about R’s data types in this lab, why do you think R requires an explicit conversion instead of guessing what the programmer meant?
 
 # To separate data meant to be shown and meant to be calculated.
 
-#Question #10: Suppose a classmate writes a script that reads a column of “numbers” from a text file. The column looks numeric, but when they try sum() on it, R throws an error. Based on everything in this lab (types, typeof()/class()/mode(), conversion, warnings), write a short paragraph explaining what likely went wrong and the steps you’d take to diagnose and fix it.
+Question #10: Suppose a classmate writes a script that reads a column of “numbers” from a text file. The column looks numeric, but when they try sum() on it, R throws an error. Based on everything in this lab (types, typeof()/class()/mode(), conversion, warnings), write a short paragraph explaining what likely went wrong and the steps you’d take to diagnose and fix it.
 
 # The "numbers" probably is on a different data types. We need to check their data types by using typeof() for a more in depth observation, class() and mode() for a simpler one. Then convert the "numbers" whom are not numeric by using as.numeric().
 
 # Conclusion
-#In 3–4 sentences, summarize what you learned about how R handles different data types, and why understanding typeof()/class() and conversion functions matters before doing arithmetic or combining data.
+In 3–4 sentences, summarize what you learned about how R handles different data types, and why understanding typeof()/class() and conversion functions matters before doing arithmetic or combining data.
 
 # R handles data types similar the way typeof(), class(), mode() checks a data type. The conversion matters because if you do not assign a role, they will likely to work on their own and screw up the environment in an office. By assigning them a proper data type, they will know whether they are meant for math, or for presentation.

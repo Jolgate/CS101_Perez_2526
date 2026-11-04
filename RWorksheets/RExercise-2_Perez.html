@@ -13,7 +13,7 @@
 
 <meta name="date" content="2026-09-30" />
 
-<title>RExercise#2_Perez</title>
+<title>RExercise 2_Perez</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,7 +350,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">RExercise#2_Perez</h1>
+<h1 class="title toc-ignore">RExercise 2_Perez</h1>
 <h4 class="author">Joewel Perez</h4>
 <h4 class="date">2026-09-30</h4>
 
@@ -359,8 +359,8 @@ display: none;
 
 <div id="part-a---arithmetic-operations" class="section level1">
 <h1>Part A - Arithmetic Operations</h1>
-<p>#TODO: Store 17 in a variable called a, and 5 in a variable called b
-#Then print the results of: a + b, a - b, a * b, a / b</p>
+<p>TODO: Store 17 in a variable called a, and 5 in a variable called b
+Then print the results of: a + b, a - b, a * b, a / b</p>
 <pre class="r"><code>a &lt;-17
 b &lt;-5
 a+b</code></pre>
@@ -371,17 +371,16 @@ a+b</code></pre>
 <pre><code>## [1] 85</code></pre>
 <pre class="r"><code>a/b</code></pre>
 <pre><code>## [1] 3.4</code></pre>
-<p>#TODO: Using the same a and b, compute and print a %% b and a %/% b
-#a %% b = remainder of a / b #a %/% b = whole-number (integer)
-division</p>
+<p>TODO: Using the same a and b, compute and print a %% b and a %/% b a
+%% b = remainder of a / b a %/% b = whole-number (integer) division</p>
 <pre class="r"><code>a%%b</code></pre>
 <pre><code>## [1] 2</code></pre>
 <pre class="r"><code>a%/%b</code></pre>
 <pre><code>## [1] 3</code></pre>
-<p>#TODO: Print 2 raised to the power of 10 using the ^ operator</p>
+<p>TODO: Print 2 raised to the power of 10 using the ^ operator</p>
 <pre class="r"><code>2^10</code></pre>
 <pre><code>## [1] 1024</code></pre>
-<p>#Question 1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your
+<p>Question 1: Run 17 / 5, 17 %% 5, and 17 %/% 5 side by side. In your
 own words, explain how these three results relate to each other
 mathematically.</p>
 <pre class="r"><code>a/b</code></pre>
@@ -390,17 +389,13 @@ mathematically.</p>
 <pre><code>## [1] 2</code></pre>
 <pre class="r"><code>a%/%b</code></pre>
 <pre><code>## [1] 3</code></pre>
-</div>
-<div id="ab-divides-and-shows-the-division-with-decimal-ab-divides-and-shows-the-remainder-ab-divides-and-shows-the-division" class="section level1">
-<h1>a/b divides and shows the division with decimal, a%%b divides and
-shows the remainder, a%/%b divides and shows the division</h1>
-<p>#Question #2: Predict the output of 10 %% 3 and 10 %/% 3 before
+<p>a/b divides and shows the division with decimal, a%%b divides and
+shows the remainder, a%/%b divides and shows the division</p>
+<p>Question #2: Predict the output of 10 %% 3 and 10 %/% 3 before
 running the code. Were you correct? If not, explain what you
 misunderstood.</p>
-</div>
-<div id="outputs-the-remainder-which-means-it-shows-1-10-3-outputs-the-division-which-means-it-shows-3" class="section level1">
-<h1>10 %% 3 outputs the remainder, which means it shows 1, 10 %/% 3
-outputs the division, which means it shows 3</h1>
+<p>10 %% 3 outputs the remainder, which means it shows 1, 10 %/% 3
+outputs the division, which means it shows 3</p>
 <pre class="r"><code>10%%3</code></pre>
 <pre><code>## [1] 1</code></pre>
 <pre class="r"><code>10%/%3</code></pre>
@@ -408,9 +403,9 @@ outputs the division, which means it shows 3</h1>
 </div>
 <div id="part-b---basic-data-types" class="section level1">
 <h1>Part B - Basic Data Types</h1>
-<p>#TODO: Use typeof() to check the type of each of x, y, z, w, v</p>
+<p>TODO: Use typeof() to check the type of each of x, y, z, w, v</p>
 <pre class="r"><code>x &lt;- 42
-y &lt;- 42L        # the L suffix forces an integer
+y &lt;- 42L        #  the L suffix forces an integer
 z &lt;- &quot;42&quot;
 w &lt;- TRUE
 v &lt;- 3 + 2i     # complex number
@@ -425,7 +420,7 @@ typeof(x)</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 <pre class="r"><code>typeof(v)</code></pre>
 <pre><code>## [1] &quot;complex&quot;</code></pre>
-<p>#TODO: Use class() to check the class of each of x, y, z, w, v</p>
+<p>TODO: Use class() to check the class of each of x, y, z, w, v</p>
 <pre class="r"><code>class(x)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <pre class="r"><code>class(y)</code></pre>
@@ -436,7 +431,7 @@ typeof(x)</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 <pre class="r"><code>class(v)</code></pre>
 <pre><code>## [1] &quot;complex&quot;</code></pre>
-<p>#TODO: Use mode() to check the class of each of x, y, z, w, v</p>
+<p>TODO: Use mode() to check the class of each of x, y, z, w, v</p>
 <pre class="r"><code>mode(x)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <pre class="r"><code>mode(y)</code></pre>
@@ -447,14 +442,14 @@ typeof(x)</code></pre>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 <pre class="r"><code>mode(v)</code></pre>
 <pre><code>## [1] &quot;complex&quot;</code></pre>
-<p>#Question #3): x &lt;- 42 and y &lt;- 42L look almost identical, but
+<p>Question #3): x &lt;- 42 and y &lt;- 42L look almost identical, but
 typeof(x) and typeof(y) give different answers. Explain the difference
 in your own words.</p>
 </div>
 <div id="i-guess-it-output-as-integer-because-it-is-a-form-of-measurement-which-is-liter" class="section level1">
 <h1>I guess it output as integer because it is a form of measurement,
 which is liter</h1>
-<p>#Question #4: Is typeof() ever different from class() and from mode()
+<p>Question #4: Is typeof() ever different from class() and from mode()
 for the same object? Look at your results above and explain any case
 where this happens (or, if you did not see one, explain what you would
 expect for a matrix or factor).</p>
@@ -462,13 +457,11 @@ expect for a matrix or factor).</p>
 <div id="yes-i-think-its-because-typeof-is-built-to-be-an-in-depth-view-of-a-data-type-whereas-class-and-mode-to-be-shallower-and-shallowest." class="section level1">
 <h1>Yes, I think its because typeof is built to be an in depth view of a
 data type, whereas class and mode to be shallower and shallowest.</h1>
-<p>#Part C - Type Conversion</p>
 </div>
-<div id="todo-convert-num_string-to-a-numeric-value-using-as.numeric" class="section level1">
-<h1>TODO: Convert num_string to a numeric value using as.numeric()</h1>
-</div>
-<div id="then-check-its-type-with-typeof-class-and-mode" class="section level1">
-<h1>Then check its type with typeof(), class(), and mode()</h1>
+<div id="part-c---type-conversion" class="section level1">
+<h1>Part C - Type Conversion</h1>
+<p>TODO: Convert num_string to a numeric value using as.numeric() Then
+check its type with typeof(), class(), and mode()</p>
 <pre class="r"><code>num_string &lt;- &quot;123&quot;
 num_as.num &lt;-as.numeric(num_string)
 typeof(num_as.num)</code></pre>
@@ -477,23 +470,14 @@ typeof(num_as.num)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <pre class="r"><code>mode(num_as.num)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-</div>
-<div id="todo-convert-the-number-0-and-the-number-1-to-logical-using-as.logical" class="section level1">
-<h1>TODO: Convert the number 0 and the number 1 to logical using
-as.logical()</h1>
-</div>
-<div id="what-do-you-get" class="section level1">
-<h1>What do you get?</h1>
+<p>TODO: Convert the number 0 and the number 1 to logical using
+as.logical() What do you get?</p>
 <pre class="r"><code>as.logical(0)</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>as.logical(1)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-</div>
-<div id="todo-try-converting-bad_string-to-numeric-using-as.numeric" class="section level1">
-<h1>TODO: Try converting bad_string to numeric using as.numeric()</h1>
-</div>
-<div id="run-this-chunk-and-observe-the-warning-message-and-the-result" class="section level1">
-<h1>Run this chunk and observe the warning message and the result</h1>
+<p>TODO: Try converting bad_string to numeric using as.numeric() Run
+this chunk and observe the warning message and the result</p>
 <pre class="r"><code>bad_string &lt;- &quot;hello123&quot;
 as.numeric(bad_string)</code></pre>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
@@ -502,28 +486,27 @@ as.numeric(bad_string)</code></pre>
 <div id="the-code-resulted-an-error-because-the-string-contains-characters-as-as.numeric-only-convert-numbers" class="section level1">
 <h1>The code resulted an error because the string contains characters,
 as as.numeric only convert numbers</h1>
-<p>#Question #5: When you ran the conversion-fail chunk, R produced NA
+<p>Question #5: When you ran the conversion-fail chunk, R produced NA
 and a warning instead of stopping with an error.</p>
-<p>#Why do you think R is designed to give a warning here rather than
+<p>Why do you think R is designed to give a warning here rather than
 crashing the whole script?</p>
 </div>
 <div id="it-is-not-strict-with-the-errors-because-r-was-not-built-to-make-systems-but-to-analyze-data." class="section level1">
 <h1>It is not strict with the errors because R was not built to make
 systems, but to analyze data.</h1>
-<p>#What are the risks of this behavior if you don’t read your
+<p>What are the risks of this behavior if you don’t read your
 warnings?</p>
 </div>
 <div id="you-will-have-missed-some-observations-to-your-data-which-will-result-to-some-unwise-decisions" class="section level1">
 <h1>You will have missed some observations to your data, which will
 result to some unwise decisions</h1>
-<p>#Question #6: as.logical(0) and as.logical(1) convert to FALSE and
+<p>Question #6: as.logical(0) and as.logical(1) convert to FALSE and
 TRUE.</p>
-<p>#What do you think as.logical(2) and as.logical(-1)` will
-produce?</p>
+<p>What do you think as.logical(2) and as.logical(-1)` will produce?</p>
 </div>
 <div id="nothing-because-logic-values-are-only-true-and-false." class="section level1">
 <h1>Nothing because logic values are only true and false.</h1>
-<p>#Test it, then explain the rule R seems to be following.</p>
+<p>Test it, then explain the rule R seems to be following.</p>
 <pre class="r"><code>as.logical(2)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>as.logical(-1)</code></pre>
@@ -537,56 +520,39 @@ type FALSE, anything else, type TRUE.</h1>
 <h1>Part D — Strings, paste(), and paste0()</h1>
 <pre class="r"><code>first_name &lt;- &quot;Juan&quot;
 last_name &lt;- &quot;Dela Cruz&quot;</code></pre>
-</div>
-<div id="todo-print-first_name-and-last_name-using-print-andor-cat" class="section level1">
-<h1>TODO: Print first_name and last_name using print() and/or cat()</h1>
+<p>TODO: Print first_name and last_name using print() and/or cat()</p>
 <pre class="r"><code>print(first_name)</code></pre>
 <pre><code>## [1] &quot;Juan&quot;</code></pre>
 <pre class="r"><code>print(last_name)</code></pre>
 <pre><code>## [1] &quot;Dela Cruz&quot;</code></pre>
 <pre class="r"><code>cat(first_name, last_name)</code></pre>
 <pre><code>## Juan Dela Cruz</code></pre>
-</div>
-<div id="todo-use-paste-to-combine-first_name-and-last_name-into-a-full-name" class="section level1">
-<h1>TODO: Use paste() to combine first_name and last_name into a full
-name</h1>
-</div>
-<div id="todo-use-paste0-to-do-the-same-and-compare-the-two-results" class="section level1">
-<h1>TODO: Use paste0() to do the same, and compare the two results</h1>
+<p>TODO: Use paste() to combine first_name and last_name into a full
+name TODO: Use paste0() to do the same, and compare the two results</p>
 <pre class="r"><code>paste(first_name, last_name)</code></pre>
 <pre><code>## [1] &quot;Juan Dela Cruz&quot;</code></pre>
 <pre class="r"><code>paste0(first_name, last_name)</code></pre>
 <pre><code>## [1] &quot;JuanDela Cruz&quot;</code></pre>
-</div>
-<div id="todo-use-paste-with-the-argument-sep---to-join-first_name-and" class="section level1">
-<h1>TODO: Use paste() with the argument sep = “-” to join first_name
-and</h1>
-</div>
-<div id="last_name-with-a-dash-instead-of-a-space" class="section level1">
-<h1>last_name with a dash instead of a space</h1>
+<p>TODO: Use paste() with the argument sep = “-” to join first_name and
+last_name with a dash instead of a space</p>
 <pre class="r"><code>paste(first_name, last_name, sep = &quot;-&quot;)</code></pre>
 <pre><code>## [1] &quot;Juan-Dela Cruz&quot;</code></pre>
 <pre class="r"><code>age &lt;- 21</code></pre>
-</div>
-<div id="todo-use-paste0-to-build-the-sentence" class="section level1">
-<h1>TODO: Use paste0() to build the sentence:</h1>
-</div>
-<div id="juan-dela-cruz-is-21-years-old.-by-combining-full_name-age-and-text" class="section level1">
-<h1>“Juan Dela Cruz is 21 years old.” by combining full_name, age, and
-text</h1>
+<p>TODO: Use paste0() to build the sentence: “Juan Dela Cruz is 21 years
+old.” by combining full_name, age, and text</p>
 <pre class="r"><code>paste0(first_name, &quot; &quot;, last_name, &quot; is &quot;, age, &quot; years old&quot;)</code></pre>
 <pre><code>## [1] &quot;Juan Dela Cruz is 21 years old&quot;</code></pre>
-<p>#Question #7: paste() and paste0() produced different results for the
+<p>Question #7: paste() and paste0() produced different results for the
 same two strings. Explain exactly why, referencing what each function
 does by default.</p>
 </div>
 <div id="paste-has-a-separator-as-space-by-default-while-paste0-does-not-have-one-by-default." class="section level1">
 <h1>paste() has a separator as space by default while paste0() does not
 have one by default.</h1>
-<p>#Question #8: In the strings-numbers chunk, you combined a character
+<p>Question #8: In the strings-numbers chunk, you combined a character
 string with a numeric variable (age) using paste0() without first
 converting age to a string.</p>
-<p>#Did this cause an error? Explain what paste0() does internally to
+<p>Did this cause an error? Explain what paste0() does internally to
 make this work, and how it relates to the type conversions you practiced
 in Part C.</p>
 </div>
@@ -594,30 +560,30 @@ in Part C.</p>
 <h1>No, every variable has a data type as a metadata made by type
 converter by default, the paste0() grabs that metadata to expect what to
 print in the display.</h1>
-<p>#TODO: Predict, then test: what is the result of “5” + 5 in R? #Run
-it and read the error message carefully.</p>
+<p>TODO: Predict, then test: what is the result of “5” + 5 in R? Run it
+and read the error message carefully.</p>
 </div>
 <div id="it-will-not-add-up-because-one-is-a-string-and-the-other-is-numerical" class="section level1">
 <h1>It will not add up because one is a string and the other is
 numerical</h1>
 <pre class="r"><code>5#+&quot;5&quot;</code></pre>
 <pre><code>## [1] 5</code></pre>
-<p>#non-numeric argument to binary operator</p>
-<p>#TODO: Now fix the code above so that “5” + 5 correctly evaluates to
-10 #using an appropriate conversion function.</p>
+<p>non-numeric argument to binary operator</p>
+<p>TODO: Now fix the code above so that “5” + 5 correctly evaluates to
+10 using an appropriate conversion function.</p>
 <pre class="r"><code>as.numeric(&quot;5&quot;) +5</code></pre>
 <pre><code>## [1] 10</code></pre>
-<p>#Question #9: Some programming languages automatically convert “5” +
-5 into 10 without an error. R does not.</p>
-<p>#Based on what you’ve learned about R’s data types in this lab, why
-do you think R requires an explicit conversion instead of guessing what
-the programmer meant?</p>
+<p>Question #9: Some programming languages automatically convert “5” + 5
+into 10 without an error. R does not.</p>
+<p>Based on what you’ve learned about R’s data types in this lab, why do
+you think R requires an explicit conversion instead of guessing what the
+programmer meant?</p>
 </div>
 <div id="to-separate-data-meant-to-be-shown-and-meant-to-be-calculated." class="section level1">
 <h1>To separate data meant to be shown and meant to be calculated.</h1>
-<p>#Question #10: Suppose a classmate writes a script that reads a
-column of “numbers” from a text file. The column looks numeric, but when
-they try sum() on it, R throws an error. Based on everything in this lab
+<p>Question #10: Suppose a classmate writes a script that reads a column
+of “numbers” from a text file. The column looks numeric, but when they
+try sum() on it, R throws an error. Based on everything in this lab
 (types, typeof()/class()/mode(), conversion, warnings), write a short
 paragraph explaining what likely went wrong and the steps you’d take to
 diagnose and fix it.</p>
@@ -630,7 +596,7 @@ observation, class() and mode() for a simpler one. Then convert the
 </div>
 <div id="conclusion" class="section level1">
 <h1>Conclusion</h1>
-<p>#In 3–4 sentences, summarize what you learned about how R handles
+<p>In 3–4 sentences, summarize what you learned about how R handles
 different data types, and why understanding typeof()/class() and
 conversion functions matters before doing arithmetic or combining
 data.</p>
