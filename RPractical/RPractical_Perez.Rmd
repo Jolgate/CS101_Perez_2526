@@ -2,7 +2,9 @@
 title: "RPractical_Perez"
 author: "Joewel Perez"
 date: "2026-11-11"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -79,17 +81,18 @@ summary(students)
 
 # B3
 ```{r}
-students$average <-round((students$midterm + students$final)/2, digits =1)
+students_B <-students
+students_B$average <-round((students$midterm + students$final)/2, digits =1)
 ```
 
 # B4
 ```{r}
-students$passed <-students$average >=70 & students$attendance >= 75
+students_B <-students$average >=70 & students$attendance >= 75
 ```
 
 # B5
 ```{r}
-students$standing <-ifelse(students$average >=90, students$standing <-"Honors", ifelse(students$average >=75 & students$average <90, students$standing <-"Good", students$standing <-"Needs Support"))
+students_B <-ifelse(students$average >=90, students$standing <-"Honors", ifelse(students$average >=75 & students$average <90, students$standing <-"Good", students$standing <-"Needs Support"))
 ```
 
 # B6
@@ -112,7 +115,8 @@ sapply(c(90, 73, 55, 40), classify)
 
 # C1
 ```{r}
-#new_students <-data.frame(id =c(9, 10), name =c("Ines", "Jamal"), sex =c("F", "M"), sec =c("C", "A"), midterm =c(81, 70), final =c(84, 68), attendance =c(92, 80))
-#students_all <-rbind(students, new_students)
+#run before students$average has ran
+new_students <-data.frame(id =c(9, 10), name =c("Ines", "Jamal"), sex =c("F", "M"), section =c("C", "A"), midterm =c(81, 70), final =c(84, 68), attendance =c(92, 80))
+students_all <-rbind(students, new_students)
 ```
 
