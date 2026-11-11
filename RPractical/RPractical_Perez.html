@@ -468,15 +468,16 @@ a +b</code></pre>
 </div>
 <div id="b3" class="section level1">
 <h1>B3</h1>
-<pre class="r"><code>students$average &lt;-round((students$midterm + students$final)/2, digits =1)</code></pre>
+<pre class="r"><code>students_B &lt;-students
+students_B$average &lt;-round((students$midterm + students$final)/2, digits =1)</code></pre>
 </div>
 <div id="b4" class="section level1">
 <h1>B4</h1>
-<pre class="r"><code>students$passed &lt;-students$average &gt;=70 &amp; students$attendance &gt;= 75</code></pre>
+<pre class="r"><code>students_B &lt;-students$average &gt;=70 &amp; students$attendance &gt;= 75</code></pre>
 </div>
 <div id="b5" class="section level1">
 <h1>B5</h1>
-<pre class="r"><code>students$standing &lt;-ifelse(students$average &gt;=90, students$standing &lt;-&quot;Honors&quot;, ifelse(students$average &gt;=75 &amp; students$average &lt;90, students$standing &lt;-&quot;Good&quot;, students$standing &lt;-&quot;Needs Support&quot;))</code></pre>
+<pre class="r"><code>students_B &lt;-ifelse(students$average &gt;=90, students$standing &lt;-&quot;Honors&quot;, ifelse(students$average &gt;=75 &amp; students$average &lt;90, students$standing &lt;-&quot;Good&quot;, students$standing &lt;-&quot;Needs Support&quot;))</code></pre>
 </div>
 <div id="b6" class="section level1">
 <h1>B6</h1>
@@ -499,8 +500,9 @@ sapply(c(90, 73, 55, 40), classify)</code></pre>
 </div>
 <div id="c1" class="section level1">
 <h1>C1</h1>
-<pre class="r"><code>#new_students &lt;-data.frame(id =c(9, 10), name =c(&quot;Ines&quot;, &quot;Jamal&quot;), sex =c(&quot;F&quot;, &quot;M&quot;), sec =c(&quot;C&quot;, &quot;A&quot;), midterm =c(81, 70), final =c(84, 68), attendance =c(92, 80))
-#students_all &lt;-rbind(students, new_students)</code></pre>
+<pre class="r"><code>#run before students$average has ran
+new_students &lt;-data.frame(id =c(9, 10), name =c(&quot;Ines&quot;, &quot;Jamal&quot;), sex =c(&quot;F&quot;, &quot;M&quot;), section =c(&quot;C&quot;, &quot;A&quot;), midterm =c(81, 70), final =c(84, 68), attendance =c(92, 80))
+students_all &lt;-rbind(students, new_students)</code></pre>
 </div>
 
 
