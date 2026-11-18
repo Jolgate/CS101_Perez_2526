@@ -533,11 +533,57 @@ table(emp_all$level)</code></pre>
 ## Junior Senior 
 ##      9     14</code></pre>
 <p>E3</p>
-<pre class="r"><code>#raise_pct &lt;-function(rating) {
-#  ifelse(rating=5, return(0.10), ifelse(rating=4, return(0.07, ifelse(rating=3, return(0.04),0))))
-#emp_all$raise &lt;-sapply(emp_all$rating, raise_pct)
-#}
-#emp_all$new_salary &lt;- round(emp_all$salary * (1 + emp_all$raise))</code></pre>
+<pre class="r"><code>raise_pct &lt;- function(rating) {
+  if (is.na(rating)) {
+    return(0)
+  } else if (rating == 5) {
+    return(0.10)
+  } else if (rating == 4) {
+    return(0.07)
+  } else if (rating == 3) {
+    return(0.04)
+  } else {
+    return(0)
+  }
+}
+
+emp_all$raise &lt;- sapply(emp_all$rating, raise_pct)
+emp_all$new_salary &lt;- round(emp_all$salary * (1 + emp_all$raise))
+
+head(emp_all[, c(&quot;name&quot;, &quot;rating&quot;, &quot;raise&quot;, &quot;new_salary&quot;)], 5)</code></pre>
+<pre><code>##    name rating raise new_salary
+## 1 Alice      4  0.07      77040
+## 2 Bruno      3  0.04      60320
+## 3  Chen      5  0.10      71500
+## 4  Dana      3  0.04      56160
+## 5  Elif      4  0.07      83460</code></pre>
+<p>E4</p>
+<pre class="r"><code>total &lt;-sum(emp_all$new_salary)
+if (total &lt;1600000){
+  &quot;Budget OK&quot;
+} else {
+  &quot;Over Budget&quot;
+}</code></pre>
+<pre><code>## [1] &quot;Budget OK&quot;</code></pre>
+<pre class="r"><code>total</code></pre>
+<pre><code>## [1] 1578770</code></pre>
+</div>
+<div id="part-e-1" class="section level1">
+<h1>Part E</h1>
+<p>F1</p>
+<pre class="r"><code>sort(head(emp_all$salary, 5), decreasing =TRUE)</code></pre>
+<pre><code>## [1] 78000 72000 65000 58000 54000</code></pre>
+<pre class="r"><code>sort(head(emp_all$name, 5), decreasing =TRUE)</code></pre>
+<pre><code>## [1] &quot;Elif&quot;  &quot;Dana&quot;  &quot;Chen&quot;  &quot;Bruno&quot; &quot;Alice&quot;</code></pre>
+<p>F2</p>
+<pre class="r"><code>by_salary &lt;-emp_all[order(emp_all$salary, decreasing = TRUE),]
+head(by_salary[,c(&quot;name&quot;, &quot;department&quot;, &quot;salary&quot;)], 5)</code></pre>
+<pre><code>##      name department salary
+## 18    Raj         IT  95000
+## 9    Ines    Finance  92000
+## 7   Grace         IT  88000
+## 22 Victor         IT  83000
+## 15   Olga         IT  79000</code></pre>
 </div>
 
 
