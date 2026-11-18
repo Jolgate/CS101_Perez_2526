@@ -1,0 +1,146 @@
+---
+title: "RPractical#2_Perez"
+author: Joewel Perez
+date: "2026-11-11"
+output:
+  #pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Part A
+
+A1
+```{r}
+emp_df <-read.csv("employees.csv")
+```
+
+A2
+```{r}
+head(emp_df)
+summary(emp_df)
+```
+
+A3
+```{r}
+dim(emp_df)
+```
+
+A3
+```{r}
+nrow(emp_df)
+ncol(emp_df)
+sapply(emp_df, class)
+```
+
+A4
+```{r}
+mean(emp_df$salary)
+max(emp_df$age)
+table(emp_df$department)
+```
+
+# Part B
+
+B1
+```{r}
+new_hires <-data.frame(emp_id =c(21:23), name =c("Uma", "Victor", "Wen"), department =c("HR", "IT", "Sales"), sex =c("F", "M", "F"), age =c(28, 37, 33), salary =c(45000, 83000, 60000), years_service =c(2, 9, 6), rating =c(3:5))
+```
+
+B2
+```{r}
+emp_all <-rbind(emp_df, new_hires)
+```
+
+B3
+```{r}
+cbind(emp_all, bonus =emp_all$salary*0.05)
+```
+
+# Part C
+
+C1
+```{r}
+subset(emp_all, emp_all$name <"F", select =c("name", "salary"))
+```
+
+C2
+```{r}
+subset(emp_all, salary >70000)
+```
+
+C3
+```{r}
+subset(emp_all, department =="IT" & years_service >=5, select =c("name", "years_service", "salary"))
+```
+
+C4
+```{r}
+emp_all[which(emp_all$age>50),]
+```
+
+C5
+```{r}
+#subset(emp_all, -emp_id, select = head(3))
+head(subset(emp_all, select = -emp_id), 3)
+```
+
+C6
+```{r}
+subset(emp_all, name=="Mia", select = salary)
+```
+
+# Part D
+
+D1
+```{r}
+levels(factor(emp_all$department))
+levels(factor(emp_all$sex))
+```
+
+D2
+```{r}
+table(emp_all$department)
+table(emp_all$department, emp_all$sex)
+```
+
+D3
+```{r}
+emp_all$rating_level <-factor(x =emp_all$rating, levels = 1:5, labels = c("Poor", "Fair", "Good", "Very Good", "Excellent"), ordered =TRUE)
+table(emp_all$rating_level)
+```
+
+D4
+```{r}
+for (i in levels(emp_all$department)) {
+  print(round(mean(emp_all$salary[emp_all$department ==i])))
+}
+```
+
+# Part E
+
+E1
+```{r}
+emp_all$salary_band <-ifelse(emp_all$salary>=70000, "High", ifelse(emp_all$salary>=50000 & emp_all$salary<70000, "Medium", "Low"))
+table(emp_all$salary_band)
+```
+
+E2
+```{r}
+emp_all$level <-ifelse(emp_all$years_service>=8, "Senior", "Junior")
+table(emp_all$level)
+```
+
+E3
+```{r}
+#raise_pct <-function(rating) {
+#  ifelse(rating=5, return(0.10), ifelse(rating=4, return(0.07, ifelse(rating=3, return(0.04),0))))
+#emp_all$raise <-sapply(emp_all$rating, raise_pct)
+#}
+#emp_all$new_salary <- round(emp_all$salary * (1 + emp_all$raise))
+
+```
+
